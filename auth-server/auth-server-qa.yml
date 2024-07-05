@@ -16,7 +16,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
-      mode: always
+      mode: never
 eureka:
   client:
     fetchRegistry: true
@@ -47,6 +47,8 @@ management:
       enabled: true
 
 
-auth:
-  secret: WUSGVBKJADNFN893745897*&%#*^KGWFEKG
-  jwtExpirationMs: 36000
+jwt:
+  secret: WUSGVBKJADNFN893745897IWOHFCASNCLANWIVBKGWFEKGSUIHVKSJVNJKBWSVKWB
+  expirationMs: 1800000 # 30 min
+refreshToken:
+  expirationMs: 3600000 # 1 hour
