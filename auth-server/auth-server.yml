@@ -17,6 +17,7 @@ spring:
   sql:
     init:
       mode: never
+
 eureka:
   client:
     fetchRegistry: true
