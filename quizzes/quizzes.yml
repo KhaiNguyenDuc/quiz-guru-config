@@ -4,19 +4,19 @@ server:
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties: 
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/quizguru_context?createIfNotExists=true
+    url: jdbc:mysql://localhost:3306/quizguru_quiz
     username: root
-    password: 
+    password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
-      mode: never
+      mode: always
 
 eureka:
   client:
