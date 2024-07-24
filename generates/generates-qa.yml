@@ -47,6 +47,10 @@ management:
     env:
       enabled: true
 
+amqp:
+  queues:
+    generation: generation.queue
+
 generate:
   model: gpt-3.5-turbo
   apiKey: '{cipher}650416c21abe336d073303ee689d1f0cb59511dffadec86867143763012c7409627c9522a5b0a87786f06817d4036aca2b189062d969a1daae4ed2281ff71455280d01e907a0232aeb6c4c1a2d88fa8f'

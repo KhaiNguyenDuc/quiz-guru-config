@@ -46,3 +46,15 @@ management:
   info:
     env:
       enabled: true
+
+amqp:
+  exchanges:
+    internal: internal.exchange
+  queues:
+    generation: generation.queue
+    text-vocab: text-vocab.queue
+    file-vocab: file-vocab.queue
+  routing-keys:
+    internal-generation: internal.generation.routing-key
+    internal-text-vocab: internal.text-vocab.routing-key
+    internal-file-vocab: internal.file-vocab.routing-key
