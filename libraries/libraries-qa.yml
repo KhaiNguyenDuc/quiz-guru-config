@@ -1,5 +1,5 @@
 server:
-  port: 8086
+  port: 8084
 
 spring:
   jpa:
@@ -10,7 +10,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/quizguru_auth
+    url: jdbc:mysql://localhost:3306/quizguru_library
     username: root
     password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -47,25 +47,7 @@ management:
     env:
       enabled: true
 
-
-jwt:
-  secret: WUSGVBKJADNFN893745897IWOHFCASNCLANWIVBKGWFEKGSUIHVKSJVNJKBWSVKWB
-  expirationMs: 1800000 # 30 min
-refreshToken:
-  expirationMs: 3600000 # 1 hour
-verificationToken:
-  expirationMs: 3600000 # 1 hour
-passwordResetToken:
-  expirationMs: 3600000 # 1 hour
-
-amqp:
-  exchanges:
-    internal: internal.exchange
-  queues:
-    verification-mail: verification-mail.queue
-    password-reset-mail: password-reset-mail.queue
-    base-mail: base-mail.queue 
-  routing-keys:
-    internal-verification-mail: internal.verification-mail.routing-key
-    internal-password-reset-mail: internal.password-reset-mail.routing-key
-    internal-base-mail: internal.base-mail.routing-key
+dictionary:
+  url: https://lingua-robot.p.rapidapi.com/language/v1/entries/en/%s
+  host: lingua-robot.p.rapidapi.com
+  apiKey: '{cipher}02ea85e8e523b5131a03806b6bff802720df684fbacfd953a4bb1479a099feb0ef8e2124c2222ee178ac09c76595ccbee433b0d2cd659f02e2040b6e06753b7aeb65a324b380dade0fb07572d516d76f'
