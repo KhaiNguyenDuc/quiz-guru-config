@@ -12,11 +12,11 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/quizguru_quiz
     username: root
-    password:
+    password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
-      mode: never
+      mode: always
 
 eureka:
   client:
@@ -52,7 +52,11 @@ amqp:
     internal: internal.exchange
   queues:
     generation: generation.queue
-    vocabulary: vocabulary.queue
+    text-vocab: text-vocab.queue
+    file-vocab: file-vocab.queue
+    list-vocab: list-vocab.queue
   routing-keys:
     internal-generation: internal.generation.routing-key
-    internal-vocabulary: internal.vocabulary.routing-key
+    internal-text-vocab: internal.text-vocab.routing-key
+    internal-text-vocab: internal.list-vocab.routing-key
+    internal-file-vocab: internal.file-vocab.routing-key

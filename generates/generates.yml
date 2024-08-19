@@ -52,6 +52,7 @@ amqp:
     generation: generation.queue
     text-vocab: text-vocab.queue
     file-vocab: file-vocab.queue
+    list-vocab: list-vocab.queue
 
 generate: 
   model: gpt-3.5-turbo
