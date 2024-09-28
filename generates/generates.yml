@@ -11,7 +11,7 @@ spring:
     show-sql: true
   datasource:
     url: jdbc:mysql://localhost:3306/quizguru_generate
-    username: root
+    username: rootf
     password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
@@ -46,6 +46,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: generates
 
 amqp:
   queues:

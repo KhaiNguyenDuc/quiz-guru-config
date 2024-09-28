@@ -12,11 +12,11 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/quizguru_record
     username: root
-    password:
+    password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
-      mode: never  
+      mode: always  
 
 eureka:
   client:
@@ -46,3 +46,6 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}

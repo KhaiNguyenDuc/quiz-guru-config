@@ -46,7 +46,9 @@ management:
   info:
     env:
       enabled: true
-
+  metrics:
+    tags:
+      application: auth-server
 
 jwt:
   secret: WUSGVBKJADNFN893745897IWOHFCASNCLANWIVBKGWFEKGSUIHVKSJVNJKBWSVKWB

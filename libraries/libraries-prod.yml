@@ -46,6 +46,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 dictionary:
   url: https://lingua-robot.p.rapidapi.com/language/v1/entries/en/%s

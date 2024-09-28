@@ -46,6 +46,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 amqp:
   exchanges:
@@ -58,5 +61,5 @@ amqp:
   routing-keys:
     internal-generation: internal.generation.routing-key
     internal-text-vocab: internal.text-vocab.routing-key
-    internal-text-vocab: internal.list-vocab.routing-key
+    internal-list-vocab: internal.list-vocab.routing-key
     internal-file-vocab: internal.file-vocab.routing-key

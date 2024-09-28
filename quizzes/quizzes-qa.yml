@@ -10,7 +10,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/quizguru_quiz
+    url: jdbc:mysql://mysql-db:3306/quizguru_quiz
     username: root
     password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -43,9 +43,16 @@ management:
     health:
       probes:
         enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 amqp:
   exchanges:
@@ -58,5 +65,5 @@ amqp:
   routing-keys:
     internal-generation: internal.generation.routing-key
     internal-text-vocab: internal.text-vocab.routing-key
-    internal-text-vocab: internal.list-vocab.routing-key
+    internal-list-vocab: internal.list-vocab.routing-key
     internal-file-vocab: internal.file-vocab.routing-key

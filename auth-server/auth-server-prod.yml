@@ -46,7 +46,9 @@ management:
   info:
     env:
       enabled: true
-
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 jwt:
   secret: WUSGVBKJADNFN893745897IWOHFCASNCLANWIVBKGWFEKGSUIHVKSJVNJKBWSVKWB

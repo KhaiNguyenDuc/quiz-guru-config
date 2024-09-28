@@ -10,7 +10,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/quizguru_generate
+    url: jdbc:mysql://mysql-db:3306/quizguru_generate
     username: root
     password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -46,7 +46,10 @@ management:
   info:
     env:
       enabled: true
-
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      
 amqp:
   queues:
     generation: generation.queue
