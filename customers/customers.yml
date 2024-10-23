@@ -39,10 +39,3 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
-
-# keycloak:
-#   auth-server-url: http://localhost:7080
-#   realm: Quizguru
-#   resource: quizguru-cc
-#   credentials:
-#     secret: 3PIOPp92fBvTkT8OjhkTtMs1i6hlB3xv

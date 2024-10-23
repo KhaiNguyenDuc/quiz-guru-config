@@ -10,13 +10,18 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/quizguru_record
+    url: jdbc:mysql://mysql-db:3306/quizguru_record
     username: root
     password: k989898k
     driver-class-name: com.mysql.cj.jdbc.Driver
   sql:
     init:
       mode: always  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://identity/realms/Quizguru/protocol/openid-connect/certs
 
 eureka:
   client:

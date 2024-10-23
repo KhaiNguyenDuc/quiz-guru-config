@@ -17,7 +17,11 @@ spring:
   sql:
     init:
       mode: always  
-
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://identity/realms/Quizguru/protocol/openid-connect/certs
 logging:
   level:
     root: DEBUG 
