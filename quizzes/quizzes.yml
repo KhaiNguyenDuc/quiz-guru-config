@@ -68,3 +68,10 @@ amqp:
     internal-text-vocab: internal.text-vocab.routing-key
     internal-list-vocab: internal.list-vocab.routing-key
     internal-file-vocab: internal.file-vocab.routing-key
+
+keycloak:
+  auth-server-url: http://localhost:7080
+  realm: Quizguru
+  resource: quizguru-cc
+  credentials:
+    secret: ycHlOi6RcRnWJn02Famuh3ouEUANigsh
