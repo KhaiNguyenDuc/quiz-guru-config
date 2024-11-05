@@ -1,27 +1,36 @@
 server:
-  port: 8084
+  port: 8072
 
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: none
-    properties: 
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-    show-sql: true
-  datasource:
-    url: jdbc:mysql://mysql-db:3306/quizguru_library
-    username: root
-    password: k989898k
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  sql:
-    init:
-      mode: always  
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+      discovery:
+        locator:
+          enabled: true
+        lowerCaseServiceId: true
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 10s
+    data:
+      redis:
+        connect-timeout: 1000
+        host: localhost
+        port: 6379
+        timeout: 1s
   security:
     oauth2:
       resourceserver:
         jwt:
           jwk-set-uri: http://identity:8080/realms/Quizguru/protocol/openid-connect/certs
+  
 logging:
   pattern:
     level: "%5p[${spring.application.name},%X{trace_id},%X{span_id}]"
@@ -58,7 +67,10 @@ management:
     tags:
       application: ${spring.application.name}
 
-dictionary:
-  url: https://lingua-robot.p.rapidapi.com/language/v1/entries/en/%s
-  host: lingua-robot.p.rapidapi.com
-  apiKey: '{cipher}02ea85e8e523b5131a03806b6bff802720df684fbacfd953a4bb1479a099feb0ef8e2124c2222ee178ac09c76595ccbee433b0d2cd659f02e2040b6e06753b7aeb65a324b380dade0fb07572d516d76f'
+resilience4j.circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 2
+        waitDurationInOpenState: 10000
+        failureRateThreshold: 50
