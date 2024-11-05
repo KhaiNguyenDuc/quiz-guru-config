@@ -41,7 +41,7 @@ management:
       application: ${spring.application.name}
 
 keycloak:
-  auth-server-url: http://localhost:8080
+  auth-server-url: http://identity:8080
   realm: Quizguru
   resource: quizguru-cc
   credentials:
