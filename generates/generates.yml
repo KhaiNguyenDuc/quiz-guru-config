@@ -74,10 +74,17 @@ amqp:
     file-vocab: file-vocab.queue
     list-vocab: list-vocab.queue
 
-generate: 
-  model: gpt-3.5-turbo
-  apiKey: '{cipher}7366718b1eb92e85d45670230dd34810be76e77fa36856d2a6a811d38c5064a5f53e767da1ed55fe3a5148341e4b2bd4daf29225ac636f9e7ead4ad42795b97fa23d39b5aaceac6071c2a4c13f792f9b'
-  apiURL: 'https://api.openai.com/v1/chat/completions'
+generate:
+  providers:
+    openai:
+      model: gpt-3.5-turbo
+      apiKey: '{cipher}7366718b1eb92e85d45670230dd34810be76e77fa36856d2a6a811d38c5064a5f53e767da1ed55fe3a5148341e4b2bd4daf29225ac636f9e7ead4ad42795b97fa23d39b5aaceac6071c2a4c13f792f9b'
+      apiURL: 'https://api.openai.com/v1/chat/completions'
+    gemini:
+      model: gemini-2.5-flash
+      apiKey: '{cipher}997d1dfa8c599cb5b6ffe0477307107ed0a26e878cc6d8764f3baea8ed9c6717fd66d953320ccb8a2b021f45150e0f39ef787238cc3cd68995ca322bd3043b8c'
+      apiURL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
+
 prompt:
   singleChoiceQuizPrompt: "Give me exactly %d questions of type %s about the given text which has the level %s. Return your answer entirely in the form of a JSON object. The JSON object must have a key named \"questions\" which is an array of the questions. Each quiz question should include exactly 4 choices, the answers, and a brief explanation of why the answer is correct. Don't include anything other than the JSON. The JSON properties of each question should be \"query\" (which is the question), \"choices\", \"answers\", \"type\"( \"MULTIPLE_CHOICE\" or \"SINGLE_CHOICE\") and \"explanation\". The choices shouldn't have any ordinal value like A, B, C, D or a number like 1, 2, 3, 4. The answer should be an array include the 0-indexed number of the correct choice. The json Object will returned in %s language"
   multipleChoiceQuizPrompt: "Provide exactly %d questions of type %s based on the given text, with a difficulty level of %s. Return your response in the form of a JSON object. The JSON object should contain a key named \"questions,\" which is an array of the questions. Each multiple-choice question should have exactly 4 choices, answers, and a brief explanation of why the answers are correct. There must have more than 1 choice corrected, paraphrase the other choice to replicate as many correct choice as possible. The JSON properties of each question should include \"query\" (the question), \"choices,\" \"answers,\" ( always has size more than 1 ), \"type\" (use \"MULTIPLE_CHOICE\" for questions with more than 1 correct choice), and \"explanation.\" Ensure that the choices do not have any ordinal values like A, B, C, D, or numerical values like 1, 2, 3, 4. The answers should be an array including the 0-indexed numbers of correct choices. The JSON object will be returned in %s language."
