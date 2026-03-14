@@ -62,4 +62,4 @@ management:
 dictionary:
   url: https://lingua-robot.p.rapidapi.com/language/v1/entries/en/%s
   host: lingua-robot.p.rapidapi.com
-  apiKey: '{cipher}54f1d2779b093db4d69c69650030ae52f9adb2c5a269536a9448b05cfa644ef6'
+  apiKey: '{cipher}c3626299f71883907cce0cdf156ae0ce346e5227c09b447d4bfecf1abf5cf0662c0f54ad2875af245cd82174e8b8da9ec7c50411e78e94bccbd7fb13067b284b7f485adfaac9ede9fdc2100f50f0b885'
